@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637729391250000000
+      ticks: 637734346920000000
     m_Hash: 3514944958
   m_LockFileStatus:
     m_FilePath: /Users/devansh/Desktop/Unity GUI/SpatialAudioGUI/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637729391280000000
+      ticks: 637734346920000000
     m_Hash: 3518015605
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
