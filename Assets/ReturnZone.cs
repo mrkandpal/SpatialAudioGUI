@@ -7,6 +7,7 @@ public class ReturnZone : MonoBehaviour, IDropHandler
 {
     public GameObject sourceParent;
     public GameObject audioDropZone;
+    public GameObject listener;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -21,7 +22,7 @@ public class ReturnZone : MonoBehaviour, IDropHandler
             Debug.Log(d.parentToReturnTo.childCount);
 
             if(dropped.sourceCounter > 0 && dropped.sourceCounter <= 4) {
-                if (d.parentToReturnTo.childCount<=4)
+                if (listener.transform.IsChildOf(d.parentToReturnTo.transform))
                 {
                     d.parentToReturnTo = sourceParent.transform;
                     dropped.sourceCounter--;
@@ -37,3 +38,5 @@ public class ReturnZone : MonoBehaviour, IDropHandler
 
     }
 }
+
+
