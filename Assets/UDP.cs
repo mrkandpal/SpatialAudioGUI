@@ -73,7 +73,7 @@ public class UDP : MonoBehaviour
         print("UDP.init()");
         //define IP address and port number
         IP = "127.0.0.1";
-        port = 31003;
+        port = 8085;
 
         remoteEndPoint = new IPEndPoint(IPAddress.Parse(IP), port);
         client = new UdpClient();
