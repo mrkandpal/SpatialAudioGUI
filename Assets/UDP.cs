@@ -51,6 +51,8 @@ public class UDP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if(sendText != sendTextOld)
         {
             sendString(sendText);

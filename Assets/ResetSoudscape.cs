@@ -26,6 +26,11 @@ public class ResetSoudscape : MonoBehaviour
 
         Dropzone dropped = audioDropZone.GetComponent<Dropzone>();
         dropped.sourceCounter = 0;
+
+        for(int i = 0; i<10; ++i)
+        {
+            dropped.sourceActivationFlags[i] = 0;
+        }
     }
 
     // Update is called once per frame

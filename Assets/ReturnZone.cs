@@ -25,6 +25,7 @@ public class ReturnZone : MonoBehaviour, IDropHandler
                 if (listener.transform.IsChildOf(d.parentToReturnTo.transform))
                 {
                     d.parentToReturnTo = sourceParent.transform;
+                    dropped.sourceActivationFlags[d.sourceIndex - 1] = 0;
                     dropped.sourceCounter--;
                     Debug.Log("Sound source removed" + "\n" + dropped.sourceCounter + " Source(s) active in the soundfield");
                 }
@@ -32,7 +33,7 @@ public class ReturnZone : MonoBehaviour, IDropHandler
             else
             {
                 d.parentToReturnTo = sourceParent.transform;
-                Debug.Log("executing here");
+                Debug.Log("Executing Here");
             }            
         }
 
