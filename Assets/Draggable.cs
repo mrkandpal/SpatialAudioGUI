@@ -18,6 +18,9 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     //Define fixed initial, target and listener gameObjects
     public GameObject initialParent, targetParent, listener;
 
+    //Define gameObjects to check for left and right limit
+    public GameObject leftEnd, rightEnd;
+
     //Define vectors to store positions of listener
     public Vector2 listenerPosition;
 
@@ -97,10 +100,20 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         //Send UDP containing source location (angular value) to specified port if sound source is inside the audio drop zone
         if(this.activationStatus == true)
         {
-            // broadcast to UDP port
+            //Calculate directionof movement
             targetDirection = this.transform.position - listener.transform.position;
 
+            //Calculate net angle between sound source and listener
             this.sourceAngle = Vector3.Angle(targetDirection, listenerPosition);
+
+            //If the sound source is closer to the right end, subtract the angle value from 360
+            if(this.sourceAngle>0 && Vector2.Distance(this.transform.position, leftEnd.transform.position) > Vector2.Distance(this.transform.position, rightEnd.transform.position))
+            {
+                this.sourceAngle = 360.0f - this.sourceAngle;
+            }
+
+            //Broadcast angle + gain factor over udp
+            //message format - angle|gain. use '|' as delimiter.
             Debug.Log(this.sourceAngle);
         }
      }
