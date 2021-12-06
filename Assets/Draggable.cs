@@ -115,8 +115,8 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             client.Send(data, data.Length, remoteEndPoint);
         }catch (Exception err)
         {
-            //Debug.Log(err.ToString());
-            Debug.Log("error here");
+            Debug.Log(err.ToString());
+            //Debug.Log("error here");
         }
         
     }
@@ -161,12 +161,17 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
                 this.sourceAngle = 360.0f - this.sourceAngle;
             }
 
+            //Round off value of soureAngle to get cleaner values
+            this.sourceAngle = Mathf.Floor(this.sourceAngle);
+
+            //Calculate distance between listener and sound source to apply distance-based scalar gain
             this.distanceGain = Vector2.Distance(this.transform.position, listener.transform.position);
+            this.distanceGain = Mathf.Floor(this.distanceGain);
 
             //Broadcast angle + gain factor over udp
             //message format - angle|gain. use '|' as delimiter
 
-            this.statusMessage = this.sourceAngle + "|" +  this.distanceGain;
+            this.statusMessage = this.sourceAngle + "|" +  this.distanceGain + "|" + this.sourceIndex;
             Debug.Log(this.statusMessage);
             SendString(this.statusMessage);
         }
