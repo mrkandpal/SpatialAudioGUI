@@ -37,9 +37,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74, y: -241}
+  m_AnchoredPosition: {x: 56.5, y: -258.5}
   m_SizeDelta: {x: 35, y: 35}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &4266100566816557449
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -90,6 +90,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31577e9f1da714008af4b1e9c6eb869c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentToReturnTo: {fileID: 0}
+  sourceName: 
+  sourceIndex: 0
+  activationStatus: 0
+  initialParent: {fileID: 0}
+  targetParent: {fileID: 0}
+  listener: {fileID: 0}
+  leftEnd: {fileID: 0}
+  rightEnd: {fileID: 0}
+  listenerPosition: {x: 0, y: 0}
+  sourceAngle: 0
+  distanceGain: 1
+  port: 0
+  IP: 127.0.0.1
+  statusMessage: 
 --- !u!114 &4236608226708702580
 MonoBehaviour:
   m_ObjectHideFlags: 0
