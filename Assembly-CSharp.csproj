@@ -57,9 +57,9 @@
     <Compile Include="Assets\StatusText.cs" />
     <Compile Include="Assets\ResetSoudscape.cs" />
     <Compile Include="Assets\Dropzone.cs" />
+    <Compile Include="Assets\AmbiSelect.cs" />
     <Compile Include="Assets\UDP.cs" />
     <Compile Include="Assets\ReturnZone.cs" />
-    <Compile Include="Assets\AmbiSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

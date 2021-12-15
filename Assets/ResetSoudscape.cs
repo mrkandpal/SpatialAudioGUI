@@ -36,7 +36,7 @@ public class ResetSoudscape : MonoBehaviour
     
     void resetAllSources()
     {
-        Debug.Log("Reset Button Pressed");
+        //Debug.Log("Reset Button Pressed");
         foreach (GameObject soundSource in monoSources)
         {
             soundSource.transform.SetParent(sourceParent.transform);

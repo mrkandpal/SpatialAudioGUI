@@ -172,7 +172,7 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             //message format - angle|gain. use '|' as delimiter
 
             this.statusMessage = this.sourceAngle + "|" +  this.distanceGain + "|" + this.sourceIndex;
-            Debug.Log(this.statusMessage);
+            //Debug.Log(this.statusMessage);
             SendString(this.statusMessage);
         }
      }

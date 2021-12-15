@@ -19,7 +19,7 @@ public class ReturnZone : MonoBehaviour, IDropHandler
 
         if (d)
         {
-            Debug.Log(d.parentToReturnTo.childCount);
+            //Debug.Log(d.parentToReturnTo.childCount);
 
             if(dropped.sourceCounter > 0 && dropped.sourceCounter <= 4) {
                 if (listener.transform.IsChildOf(d.parentToReturnTo.transform))
@@ -27,13 +27,13 @@ public class ReturnZone : MonoBehaviour, IDropHandler
                     d.parentToReturnTo = sourceParent.transform;
                     dropped.sourceActivationFlags[d.sourceIndex - 1] = 0;
                     dropped.sourceCounter--;
-                    Debug.Log("Sound source removed" + "\n" + dropped.sourceCounter + " Source(s) active in the soundfield");
+                    //Debug.Log("Sound source removed" + "\n" + dropped.sourceCounter + " Source(s) active in the soundfield");
                 }
             }
             else
             {
                 d.parentToReturnTo = sourceParent.transform;
-                Debug.Log("Executing Here");
+                //Debug.Log("Executing Here");
             }            
         }
 
